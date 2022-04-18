@@ -7,4 +7,14 @@ app = Flask(__name__)
 def index():
     return 'random : <strong>'+str(random.random())+'</strong>'
 
+@app.route('/create/')
+def create():
+    return 'Create'
+
+@app.route('/read/<id>/')
+def read(id):
+    print(id)
+    return 'Read '+ id
+
+
 app.run(port=5001, debug=True)
